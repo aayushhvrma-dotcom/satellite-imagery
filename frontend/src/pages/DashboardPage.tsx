@@ -14,7 +14,7 @@ export default function DashboardPage() {
     if (id) {
       getAnalysisResult(id).then(setData).catch(console.error);
       
-      fetch(`http://127.0.0.1:8000/api/v1/analysis/${id}/report`)
+      fetch(`https://satellite-imagery.onrender.com/api/v1/analysis/${id}/report`)
         .then(res => res.json())
         .then(data => setReport(data.executive_report))
         .catch(err => console.error("Report error:", err));
