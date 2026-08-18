@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Pointing to your FastAPI server URL
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/v1',
+  baseURL: 'https://satellite-imagery.onrender.com/api/v1',
 });
 
 export const startAnalysis = async (data: { location_name: string; latitude: number; longitude: number; radius_km: number; start_year: number; end_year: number }) => {
