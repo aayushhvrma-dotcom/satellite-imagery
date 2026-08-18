@@ -12,7 +12,7 @@ export default function LandingPage() {
     setLoading(true);
     
     try {
-      const response = await fetch('https://satellite-imagery.onrender.com/api/v1/analysis', {
+      const response = await fetch('http://127.0.0.1:8000/api/v1/analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -47,7 +47,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Navbar (Teams removed from top right) */}
+      {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-6 border-b border-slate-800/80 backdrop-blur-md relative z-20">
         <div className="text-xl font-black tracking-wider text-white">GEO.AI</div>
         <div className="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
@@ -82,11 +82,11 @@ export default function LandingPage() {
             </h1>
             
             <p className="text-base text-slate-300 max-w-xl leading-relaxed drop-shadow">
-              Monitor environmental changes, urban sprawl, and deforestation using Sentinel-2 data and advanced Siamese U-Net architectures.
+              Monitor environmental changes, urban sprawl, and deforestation using Sentinel-2 data and advanced Siamese U-Net architectures (2017 - 2025).
             </p>
           </div>
 
-          {/* Right Quick Start Analysis Form Card */}
+          {/* Right Quick Start Analysis Form Card (2017 - 2025 Fixed) */}
           <div className="lg:col-span-5">
             <form onSubmit={handleStartAnalysis} className="bg-slate-950/80 backdrop-blur-xl border border-cyan-500/40 p-6 rounded-3xl shadow-2xl space-y-4">
               <div className="text-base font-bold text-white border-b border-slate-800 pb-2">Run Analysis</div>
@@ -95,7 +95,7 @@ export default function LandingPage() {
                 <label className="text-xs font-semibold text-slate-400">Baseline Date (T1)</label>
                 <input 
                   type="text" 
-                  value="01-01-2023"
+                  value="01-01-2017"
                   readOnly
                   className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-slate-400 font-mono"
                 />
@@ -105,7 +105,7 @@ export default function LandingPage() {
                 <label className="text-xs font-semibold text-slate-400">Analysis Date (T2)</label>
                 <input 
                   type="text" 
-                  value="01-01-2024"
+                  value="01-01-2025"
                   readOnly
                   className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-slate-400 font-mono"
                 />

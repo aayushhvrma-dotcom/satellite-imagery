@@ -5,7 +5,6 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# Enable CORS for React frontend connection
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -22,7 +21,6 @@ class AnalysisRequest(BaseModel):
     start_year: int = 2017
     end_year: int = 2025
 
-# In-memory storage for generated analysis jobs
 analysis_store = {}
 
 @app.post("/api/v1/analysis")
