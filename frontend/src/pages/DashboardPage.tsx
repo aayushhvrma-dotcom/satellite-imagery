@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getAnalysisResult } from '../api/client';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
@@ -7,7 +7,7 @@ import { ShieldAlert, Building2, Trees, Droplets, MapPin, Zap, Satellite, Sparkl
 export default function DashboardPage() {
   const { id } = useParams();
   const [data, setData] = useState<any>(null);
-  const [report, setReport] = useState<string>('');
+  const [, setReport] = useState<string>('');
   const [reportTab, setReportTab] = useState<'brief' | 'action'>('brief');
 
   useEffect(() => {
