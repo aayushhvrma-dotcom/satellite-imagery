@@ -27,10 +27,8 @@ analysis_store = {}
 
 @app.post("/api/v1/analysis")
 async def create_analysis(req: AnalysisRequest):
-    # Create a unique job ID based on location name hash
     job_id = f"job-{abs(hash(req.location_name))}"
     
-    # Use location name hash as seed for consistent, location-specific randomized metrics
     random.seed(hash(req.location_name))
     overall_score = random.randint(62, 88)
     urban_pressure = random.randint(45, 89)
@@ -38,7 +36,6 @@ async def create_analysis(req: AnalysisRequest):
     water_health = random.randint(48, 86)
     environmental_risk = random.randint(32, 78)
 
-    # Base growth trajectory scaled uniquely
     base_built = random.uniform(10.0, 20.0)
     multiplier = random.uniform(1.2, 1.8)
 
