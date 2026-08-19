@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Satellite, Activity, Cpu, Layers, BarChart3, Globe2, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Satellite, Activity, Cpu, Layers, BarChart3, Zap } from 'lucide-react';
 
 export default function LandingPage() {
   const navigate = useNavigate();
