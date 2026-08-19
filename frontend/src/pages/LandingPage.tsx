@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Satellite, Activity, Cpu } from 'lucide-react';
+import { ArrowRight, Satellite, Activity, Cpu, Layers, BarChart3, Globe2, ShieldCheck, Zap } from 'lucide-react';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ export default function LandingPage() {
       {/* SECTION 1: HERO */}
       <div className="relative h-screen w-full flex flex-col justify-between overflow-hidden">
         
-        {/* Background: Real Rotating Earth Video Loop */}
+        {/* Background: Real Rotating Earth Video Loop (Untouched & Safe) */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
           <video 
             autoPlay 
@@ -181,8 +181,8 @@ export default function LandingPage() {
       </div>
 
 
-      {/* SECTION 2: ARCHITECTURE & MANIFESTO QUOTE SECTION */}
-      <div ref={sectionRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#010A17] via-[#0A4267] to-[#20658E] px-6">
+      {/* SECTION 2: INTERACTIVE ARCHITECTURE & DIFFERENTIATOR SECTION */}
+      <div ref={sectionRef} className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#010A17] via-[#0A4267] to-[#20658E] py-20 px-6">
         
         {/* Parallax Atmospheric Layer */}
         <div 
@@ -196,22 +196,63 @@ export default function LandingPage() {
           />
         </div>
 
-        {/* Central Intelligence Statement */}
-        <div className="max-w-4xl mx-auto text-center relative z-20 space-y-8">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-slate-950/40 backdrop-blur-md border border-white/20 text-cyan-300 text-xs font-mono tracking-widest uppercase">
-            <Cpu className="h-4 w-4 text-cyan-400" />
-            <span>Siamese U-Net Inference Engine</span>
+        {/* Section Header */}
+        <div className="max-w-4xl mx-auto text-center relative z-20 space-y-4 mb-12">
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-slate-950/50 backdrop-blur-md border border-cyan-500/30 text-cyan-300 text-xs font-mono tracking-widest uppercase shadow-[0_0_15px_rgba(34,211,238,0.2)]">
+            <Cpu className="h-4 w-4 text-cyan-400 animate-pulse" />
+            <span>Competitive Edge & Architecture Advantage</span>
           </div>
-
-          <p className="font-instrument text-white text-2xl sm:text-3xl md:text-5xl lg:text-[46px] leading-[1.3] md:leading-[1.4] tracking-wide text-glow">
-            "UrbanPulse AI was engineered on a mandate for absolute spatial precision. We bridge low-latency satellite ingestion with multi-spectral surface reflectance indices (NDVI, NDWI) to expose urban expansion pressure before it strains ecological balances. No guesswork, no outdated maps — just high-resolution geospatial telemetry that empowers sustainable municipal planning."
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            Why UrbanPulse AI Outperforms Traditional Mapping
+          </h2>
+          <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto">
+            Moving beyond manual surveys and outdated vector maps with autonomous, multi-temporal satellite processing from 2017 to 2025.
           </p>
+        </div>
 
-          <div className="pt-4">
-            <span className="text-cyan-300 text-xs md:text-sm tracking-widest uppercase font-mono font-bold">
-              — SENTINEL-2 COPERNICUS ENGINE & SPATIAL MODELING CORE
-            </span>
+        {/* Interactive Grid Boxes for Differentiators */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 relative z-20 w-full px-4">
+          
+          {/* Box 1 */}
+          <div className="bg-slate-950/70 backdrop-blur-xl border border-cyan-500/30 p-6 rounded-3xl shadow-2xl hover:border-cyan-400 transition-all duration-300 group hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+              <Zap className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2 font-mono">Automated Multi-Temporal Engine</h3>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Unlike static maps, we compute automated historical change trajectories across an 8-year timeline (2017–2025) instantly via Sentinel-2 rasters.
+            </p>
           </div>
+
+          {/* Box 2 */}
+          <div className="bg-slate-950/70 backdrop-blur-xl border border-cyan-500/30 p-6 rounded-3xl shadow-2xl hover:border-cyan-400 transition-all duration-300 group hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+              <Layers className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2 font-mono">Deep Siamese U-Net Models</h3>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Leveraging advanced neural segmentation to isolate exact pixel-level urban expansion, impervious surface gain, and canopy degradation.
+            </p>
+          </div>
+
+          {/* Box 3 */}
+          <div className="bg-slate-950/70 backdrop-blur-xl border border-cyan-500/30 p-6 rounded-3xl shadow-2xl hover:border-cyan-400 transition-all duration-300 group hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+              <BarChart3 className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2 font-mono">Actionable Municipal Insights</h3>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Instant executive briefing generation and ecological risk scores, turning raw spectral bands into strategic urban planning decisions in seconds.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Bottom Attribution / Core Tag */}
+        <div className="mt-12 text-center relative z-20">
+          <span className="text-cyan-300 text-xs md:text-sm tracking-widest uppercase font-mono font-bold bg-slate-950/60 px-6 py-2 rounded-full border border-cyan-500/20">
+            — AUTONOMOUS GEOSPATIAL CHANGE DETECTION ENGINE
+          </span>
         </div>
 
       </div>
