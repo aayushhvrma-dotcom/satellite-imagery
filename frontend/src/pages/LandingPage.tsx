@@ -7,6 +7,11 @@ export default function LandingPage() {
   const [locationName, setLocationName] = useState('Mumbai Metropolitan Region');
   const [loading, setLoading] = useState(false);
 
+  // Forcefully override browser tab title to remove any old wellness branding
+  useEffect(() => {
+    document.title = "GEO.AI | Planetary Change Intelligence";
+  }, []);
+
   // Parallax scroll state for Section 2
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -60,7 +65,7 @@ export default function LandingPage() {
       {/* SECTION 1: HERO */}
       <div className="relative h-screen w-full flex flex-col justify-between overflow-hidden">
         
-        {/* Background: Real Rotating Earth Video Loop (Untouched & Safe) */}
+        {/* Background: Real Rotating Earth Video Loop */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
           <video 
             autoPlay 
