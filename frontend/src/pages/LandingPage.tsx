@@ -76,7 +76,7 @@ export default function LandingPage() {
   return (
     <div ref={containerRef} className="min-h-screen bg-[#020617] text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden relative">
       
-      {/* UPDATED: Darker & Richer Cursor Spotlight Glow (Deep Indigo / Electric Violet) */}
+      {/* Darker & Richer Cursor Spotlight Glow */}
       <div 
         className="absolute pointer-events-none w-[600px] h-[600px] rounded-full bg-indigo-900/20 blur-[140px] transition-transform duration-75 z-20"
         style={{ transform: `translate(${cursorPos.x - 300}px, ${cursorPos.y - 300}px)` }}
@@ -129,21 +129,6 @@ export default function LandingPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-transparent to-[#020617]" />
         </div>
 
-        {/* Floating Animated Satellite Badge at Top Right */}
-        <div className="absolute top-28 right-8 z-30 pointer-events-none animate-bounce duration-1000 hidden lg:block">
-          <div className="bg-slate-950/85 backdrop-blur-xl border border-indigo-500/40 p-3.5 rounded-2xl shadow-[0_0_35px_rgba(99,102,241,0.25)] flex items-center space-x-3 text-indigo-300 relative">
-            <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-indigo-400" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 border-t border-r border-indigo-400" />
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-indigo-400" />
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-indigo-400" />
-            <Satellite className="h-5 w-5 animate-spin text-indigo-400" style={{ animationDuration: '8s' }} />
-            <div className="text-xs font-mono">
-              <div className="font-bold tracking-wider">SENTINEL-2 ACTIVE</div>
-              <div className="text-slate-400 text-[10px]">10m Resolution Grid</div>
-            </div>
-          </div>
-        </div>
-
         {/* Navbar */}
         <nav className="flex justify-between items-center px-6 md:px-12 py-6 border-b border-slate-800/40 backdrop-blur-xl relative z-20">
           <div className="flex items-center space-x-3">
@@ -189,8 +174,24 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Quick Analysis Form Card */}
-          <div className="lg:col-span-5">
+          {/* Quick Analysis Form Card with Aligned Sentinel Badge inside/above */}
+          <div className="lg:col-span-5 space-y-6">
+            
+            {/* Perfectly Aligned Sentinel-2 Active Badge */}
+            <div className="hidden lg:flex justify-end">
+              <div className="bg-slate-950/85 backdrop-blur-xl border border-indigo-500/40 px-4 py-3 rounded-2xl shadow-[0_0_35px_rgba(99,102,241,0.25)] flex items-center space-x-3 text-indigo-300 relative animate-bounce duration-1000">
+                <div className="absolute top-1 left-1 w-1.5 h-1.5 border-t border-l border-indigo-400" />
+                <div className="absolute top-1 right-1 w-1.5 h-1.5 border-t border-r border-indigo-400" />
+                <div className="absolute bottom-1 left-1 w-1.5 h-1.5 border-b border-l border-indigo-400" />
+                <div className="absolute bottom-1 right-1 w-1.5 h-1.5 border-b border-r border-indigo-400" />
+                <Satellite className="h-5 w-5 animate-spin text-indigo-400" style={{ animationDuration: '8s' }} />
+                <div className="text-xs font-mono">
+                  <div className="font-bold tracking-wider">SENTINEL-2 ACTIVE</div>
+                  <div className="text-slate-400 text-[10px]">10m Resolution Grid</div>
+                </div>
+              </div>
+            </div>
+
             <form onSubmit={handleStartAnalysis} className="bg-slate-950/90 backdrop-blur-2xl border border-indigo-500/30 p-7 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.9)] space-y-4 relative overflow-hidden group">
               <div className="absolute top-2 left-2 text-indigo-500/30 font-mono text-[10px]">┌</div>
               <div className="absolute top-2 right-2 text-indigo-500/30 font-mono text-[10px]">┐</div>
